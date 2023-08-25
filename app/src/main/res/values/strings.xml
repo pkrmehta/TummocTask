@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TummocTask</string>
+    <string name="time_hr_min">%1s hr %2s min</string>
+    <string name="time_hr">%s hr</string>
+    <string name="time_min">%s mins</string>
+    <string name="time_sec">%s sec</string>
+    <string name="dist_kms">%s Kms</string>
+    <string name="prefix_rupee">₹ %s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_source">Source</string>
+    <string name="source_location">HRBR Layout 1st Block, Kalyan Nagar, Bangalore, Karnataka</string>
+    <string name="source_link">///hinders.pinging.bats</string>
+    <string name="label_destination">Destination</string>
+    <string name="destination_location">Cafe Cofee Day - Barton Center, MG Road, Bangalore, Karnataka</string>
+    <string name="destination_link">///campus.majoring.submerge</string>
+    <string name="label_metro">Metro</string>
+    <string name="label_bus">Bus</string>
+    <string name="label_fastest_route">Fastest Route</string>
+    <string name="label_beta">Beta</string>
+    <string name="label_report">Report</string>
+    <string name="label_get_in_station">Get in Station</string>
+    <string name="transit_location">CS-Corporation Bank\nKammanahalli</string>
+
+</resources>

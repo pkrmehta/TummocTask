@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_45dp"
+    android:stateListAnimator="@animator/item_anim"
+    android:clickable="true"
+    android:focusable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/source_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/color_f6f7f9"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="@dimen/_10dp"
+            android:paddingEnd="@dimen/_10dp"
+            android:paddingStart="@dimen/_20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/label_source"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/montserrat_semibold"
+                android:alpha="0.3"
+                android:textSize="@dimen/_8dp"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_marginTop="@dimen/_10dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="@dimen/_8dp"
+                    android:layout_width="@dimen/_35dp"
+                    android:layout_height="@dimen/_35dp"
+                    android:background="@drawable/white_circle_background"
+                    android:elevation="@dimen/_5dp"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_42dp"
+                    android:layout_height="@dimen/_42dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/_6dp"
+                    android:src="@drawable/navigation" />
+
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_source"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_source"
+                android:layout_marginEnd="@dimen/_70dp"
+                android:text="@string/source_location"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_14dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_source_link"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_source"
+                android:layout_marginEnd="@dimen/_70dp"
+                android:text="@string/source_link"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_orange"
+                android:textSize="@dimen/_11dp"/>
+
+            <RelativeLayout
+                android:id="@+id/walk_icon_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_source_link">
+
+                <TextView
+                    android:layout_margin="@dimen/_8dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="@dimen/_8dp"
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:background="@drawable/white_stroke_dark_circle_back"
+                    android:elevation="@dimen/_5dp"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/_6dp"
+                    android:padding="@dimen/_5dp"
+                    android:src="@drawable/walk"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/arrow_1"
+                app:layout_constraintStart_toEndOf="@id/walk_icon_container"
+                app:layout_constraintTop_toTopOf="@id/walk_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/walk_icon_container"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="-10dp"
+                android:elevation="@dimen/_6dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/time_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04 mins"
+                android:textSize="@dimen/_10dp"
+                android:textColor="#162383"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toEndOf="@id/arrow_1"
+                app:layout_constraintTop_toTopOf="@id/walk_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/walk_icon_container"/>
+
+            <ImageView
+                android:id="@+id/arrow_2"
+                app:layout_constraintStart_toEndOf="@id/time_1"
+                app:layout_constraintTop_toTopOf="@id/walk_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/walk_icon_container"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/_6dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dist_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="232 Mtr"
+                android:textSize="@dimen/_10dp"
+                android:textColor="#162383"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toEndOf="@id/arrow_2"
+                app:layout_constraintTop_toTopOf="@id/walk_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/walk_icon_container"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        app:cardUseCompatPadding="true"
+        android:id="@+id/destination_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f6f7f9"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="@dimen/_15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transit_container">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="@dimen/_10dp"
+            android:paddingEnd="@dimen/_10dp"
+            android:paddingStart="@dimen/_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/label_destination"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/montserrat_semibold"
+                android:alpha="0.3"
+                android:textSize="@dimen/_8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_destination"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_destination"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:text="@string/destination_location"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_14dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/_15dp"
+                android:id="@+id/text_destination_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_destination"
+                android:layout_marginEnd="@dimen/_70dp"
+                android:text="@string/destination_link"
+                android:fontFamily="@font/montserrat_semibold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textColor="@color/color_orange"
+                android:textSize="@dimen/_11dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/transit_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#f6f7f9"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/_15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/source_container">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="@dimen/_10dp"
+            android:paddingEnd="@dimen/_10dp"
+            android:paddingStart="@dimen/_20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_get_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/label_get_in_station"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/montserrat_semibold"
+                android:alpha="0.3"
+                android:textSize="@dimen/_8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_get_in"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_get_in"
+                android:layout_marginEnd="70dp"
+                android:text="@string/transit_location"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/_13dp"/>
+
+
+            <RelativeLayout
+                android:id="@+id/bus_icon_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/text_get_in">
+
+                <TextView
+                    android:layout_margin="@dimen/_8dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginVertical="@dimen/_8dp"
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:background="@drawable/white_stroke_dark_circle_back"
+                    android:elevation="@dimen/_5dp"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_25dp"
+                    android:layout_height="@dimen/_25dp"
+                    android:layout_centerInParent="true"
+                    android:elevation="@dimen/_6dp"
+                    android:padding="@dimen/_7dp"
+                    android:src="@drawable/bus"
+                    app:tint="@color/white" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/arrow_3"
+                app:layout_constraintStart_toEndOf="@id/bus_icon_container"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="-10dp"
+                android:elevation="@dimen/_6dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/bus_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STJHS-5"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/color_orange"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toEndOf="@id/arrow_3"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"/>
+
+            <ImageView
+                android:id="@+id/arrow_4"
+                app:layout_constraintStart_toEndOf="@id/bus_1"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/_6dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/dist_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.23 KM"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toEndOf="@id/arrow_4"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"/>
+
+            <ImageView
+                android:id="@+id/arrow_5"
+                app:layout_constraintStart_toEndOf="@id/dist_2"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"
+                android:layout_width="@dimen/_20dp"
+                android:layout_height="@dimen/_20dp"
+                android:layout_centerInParent="true"
+                android:elevation="@dimen/_6dp"
+                android:padding="3dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/detail_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="~ 06 mins,₹0"
+                android:textSize="@dimen/_9dp"
+                android:textColor="#162383"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toEndOf="@id/arrow_5"
+                app:layout_constraintTop_toTopOf="@id/bus_icon_container"
+                app:layout_constraintBottom_toBottomOf="@id/bus_icon_container"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_next_schedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT SCHEDULE:"
+                android:textSize="@dimen/_10dp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/monsterrat_bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bus_icon_container"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/_5dp"
+                android:id="@+id/schedule_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/_5dp"
+                android:text="12:52 PM"
+                android:textSize="11dp"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintStart_toEndOf="@id/label_next_schedule"
+                app:layout_constraintTop_toTopOf="@id/label_next_schedule"
+                app:layout_constraintBottom_toBottomOf="@id/label_next_schedule"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginStart="@dimen/_5dp"
+                android:id="@+id/schedule_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#162383"
+                android:padding="@dimen/_5dp"
+                android:text="12:59 PM"
+                android:textSize="11dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat_semibold"
+                app:layout_constraintStart_toEndOf="@id/schedule_1"
+                app:layout_constraintTop_toTopOf="@id/label_next_schedule"
+                app:layout_constraintBottom_toBottomOf="@id/label_next_schedule"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/_20dp"
+                android:id="@+id/label_get_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/label_next_schedule"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Get Down Station"
+                android:textColor="@color/text_color"
+                android:fontFamily="@font/montserrat_semibold"
+                android:alpha="0.3"
+                android:textSize="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:paddingBottom="@dimen/_15dp"
+                android:id="@+id/text_get_down"
+                android:layout_marginTop="@dimen/_5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_get_down"
+                android:layout_marginEnd="@dimen/_20dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:text="CS-St Joseph Boys High School Museum Ramnagar, Bangaluru"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="#333333"
+                android:textSize="13dp"/>
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

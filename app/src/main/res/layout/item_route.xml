@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10dp"
+    app:cardElevation="0dp"
+    android:layout_marginBottom="@dimen/_10dp"
+    app:contentPaddingBottom="@dimen/_20dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:stateListAnimator="@animator/item_anim"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:paddingHorizontal="@dimen/_10dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_report"
+            android:padding="@dimen/_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Report"
+            android:drawablePadding="@dimen/_5dp"
+            android:drawableStart="@drawable/ic_baseline_error_outline_24"
+            android:fontFamily="@font/montserrat_semibold"
+            android:layout_marginTop="@dimen/_5dp"
+            android:textColor="@color/text_color"
+            android:alpha="0.6"
+            android:textSize="@dimen/_10dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1" />
+
+        <View
+            android:id="@+id/color_bar_1"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_report"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@android:color/holo_orange_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guideline1" />
+
+        <View
+            android:id="@+id/color_bar_2"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_report"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@android:color/holo_blue_bright"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@+id/guideline2" />
+
+        <View
+            android:id="@+id/color_bar_3"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_report"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@android:color/holo_green_dark"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintEnd_toEndOf="@+id/guideline3" />
+
+        <View
+            android:id="@+id/color_bar_4"
+            android:layout_width="0dp"
+            android:layout_height="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_report"
+            android:layout_marginTop="@dimen/_10dp"
+            android:background="@android:color/holo_red_light"
+            app:layout_constraintStart_toStartOf="@id/guideline3"
+            app:layout_constraintEnd_toEndOf="@+id/guideline4" />
+
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/source_icon_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/guideline1">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="8dp"
+                android:layout_width="@dimen/_35dp"
+                android:minWidth="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:background="@drawable/white_circle_background"
+                android:elevation="5dp"/>
+
+            <ImageView
+                android:id="@+id/route_icon_1"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:layout_centerInParent="true"
+                android:elevation="6dp"
+                android:padding="@dimen/_10dp"
+                android:src="@drawable/walk"
+                app:tint="#88888A" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/source_icon_2"
+            android:layout_width="0dp"
+            android:minWidth="@dimen/_35dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            app:layout_constraintStart_toStartOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@+id/guideline2">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="8dp"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:background="@drawable/white_circle_background"
+                android:elevation="5dp"/>
+
+            <ImageView
+                android:id="@+id/route_icon_2"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:src="@drawable/metro"
+                android:elevation="6dp"
+                android:padding="@dimen/_10dp"
+                app:tint="#88888A" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/source_icon_3"
+            android:layout_width="0dp"
+            android:minWidth="@dimen/_35dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            app:layout_constraintStart_toStartOf="@id/guideline2"
+            app:layout_constraintEnd_toEndOf="@+id/guideline3">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="8dp"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:background="@drawable/white_circle_background"
+                android:elevation="5dp"/>
+
+            <ImageView
+                android:id="@+id/route_icon_3"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:src="@drawable/walk"
+                android:elevation="6dp"
+                android:padding="@dimen/_10dp"
+                app:tint="#88888A" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/source_icon_4"
+            android:layout_width="0dp"
+            android:minWidth="@dimen/_35dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            app:layout_constraintStart_toStartOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="@+id/guideline4">
+
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_marginVertical="8dp"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:background="@drawable/white_circle_background"
+                android:elevation="@dimen/_5dp"/>
+
+            <ImageView
+                android:id="@+id/route_icon_4"
+                android:layout_centerInParent="true"
+                android:layout_width="@dimen/_35dp"
+                android:layout_height="@dimen/_35dp"
+                android:src="@drawable/bus"
+                android:elevation="@dimen/_6dp"
+                android:padding="@dimen/_10dp"
+                app:tint="#88888A" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/source_desc_container_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/route_desc_icon_0"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/walk"
+                app:tint="#88888A" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/route_desc_text_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04 mins"
+                android:textSize="@dimen/_8dp"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="#212121"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/source_desc_container_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/source_desc_container_1"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/source_desc_arrow_1"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24"
+                android:layout_marginStart="@dimen/_5dp"
+                app:tint="#88888A" />
+
+            <ImageView
+                android:id="@+id/route_desc_icon_1"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/bus"
+                app:tint="#88888A" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/route_desc_text_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="STJHS-5"
+                android:textSize="@dimen/_8dp"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/color_orange"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/source_desc_container_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/source_desc_container_2"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/source_desc_arrow_2"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24"
+                android:layout_marginStart="@dimen/_5dp"
+                app:tint="#88888A" />
+
+            <ImageView
+                android:id="@+id/route_desc_icon_2"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/metro"
+                app:tint="#88888A" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/route_desc_text_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Purple Line"
+                android:textSize="@dimen/_8dp"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/color_orange"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/source_desc_container_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toEndOf="@id/source_desc_container_3"
+            app:layout_constraintTop_toBottomOf="@id/color_bar_1"
+            android:layout_marginTop="60dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/source_desc_arrow_3"
+                android:layout_width="@dimen/_17dp"
+                android:layout_height="@dimen/_17dp"
+                android:src="@drawable/ic_baseline_arrow_right_alt_24"
+                android:layout_marginStart="5dp"
+                app:tint="#88888A" />
+            <ImageView
+                android:id="@+id/route_desc_icon_3"
+                android:layout_width="@dimen/_14dp"
+                android:layout_height="@dimen/_14dp"
+                android:src="@drawable/walk"
+                app:tint="#88888A" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/route_desc_text_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04 mins"
+                android:textSize="@dimen/_8dp"
+                android:layout_marginStart="3dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="#212121"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/next_scheduled_container"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.30"
+            app:layout_constraintTop_toBottomOf="@id/source_desc_container_1"
+            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Next Scheduled"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8dp"
+                android:textColor="#212121"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:52 PM"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/color_orange"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/estimated_time_container"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.28"
+            app:layout_constraintTop_toBottomOf="@id/source_desc_container_1"
+            app:layout_constraintStart_toEndOf="@id/next_scheduled_container"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estimated PRICe"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8dp"
+                android:textColor="#212121"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/estimated_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:52 PM"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/color_orange"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/travel_time_container"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.25"
+            app:layout_constraintTop_toBottomOf="@id/source_desc_container_1"
+            app:layout_constraintStart_toEndOf="@id/estimated_time_container"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="travel time"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8dp"
+                android:textColor="#212121"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 32 mins"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/color_orange"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/distance_container"
+            android:layout_marginTop="@dimen/_20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintWidth_percent="0.2"
+            app:layout_constraintTop_toBottomOf="@id/source_desc_container_1"
+            app:layout_constraintStart_toEndOf="@id/travel_time_container"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="distance"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/_8dp"
+                android:textColor="#212121"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/total_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7.51 Kms"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_9dp"
+                android:textColor="@color/color_orange"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
